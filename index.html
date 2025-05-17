@@ -1,43 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>KwikNotes – quick notes & task capture for Chrome</title>
-  <meta name="description" content="KwikNotes is a zero-friction note-taking Chrome extension. Capture ideas by email, pin tasks to Today, work offline, and sync instantly.">
-  <link rel="canonical" href="https://kwik-notes.com/">
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="KwikNotes – quick notes & task capture">
-  <meta property="og:description" content="Capture ideas at the speed of thought.">
-  <meta property="og:image" content="screenshot.jpg">
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"KwikNotes",
-    "operatingSystem":"Chrome",
-    "applicationCategory":"Productivity",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
-    "url":"https://kwik-notes.com",
-    "browserRequirements":"Chrome 115+",
-    "screenshot":"https://kwik-notes.com/screenshot.jpg"
-  }
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KwikNotes — capture ideas at the speed of thought</title>
+  <!-- Tailwind CSS (via CDN for quick prototyping) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS for scroll‑triggered animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Custom gradient for hero banner */
+    .hero-gradient {
+      background: linear-gradient(135deg, #f15a95 0%, #ffc20e 100%);
+    }
+  </style>
 </head>
-<body>
-  <header><h1>KwikNotes</h1></header>
-  <p>Zero-friction notes. Email in ideas. Pin tasks to Today. Offline-first.</p>
-  <a href="https://chrome.google.com/webstore/detail/kwiknotes/your-id" class="install">Install on Chrome →</a>
-  <section id="features">
-    <h2>Key features</h2>
-    <ul>
-      <li>Email yourself a note – appears in seconds</li>
-      <li>★ Pin to Today panel, visible as you browse</li>
-      <li>Drag-and-drop project board</li>
-      <li>Works offline, syncs on reconnection</li>
-    </ul>
+
+<body class="scroll-smooth antialiased text-gray-700">
+  <!-- HERO ------------------------------------------------------------ -->
+  <section class="hero-gradient relative min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 sm:py-24">
+    <h1 class="text-white font-extrabold text-5xl sm:text-6xl md:text-7xl drop-shadow-lg mb-6" data-aos="fade-down">KwikNotes</h1>
+    <p class="max-w-xl text-lg sm:text-xl md:text-2xl text-white mb-10" data-aos="fade" data-aos-delay="150">
+      Capture ideas at the speed of thought. Email yourself a note, pin tasks to Today, and work offline — all inside Chrome.
+    </p>
+    <a href="#getting-started" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="300">
+      Install on Chrome →
+    </a>
+
+    <!-- Sidebar screenshot overlay (desktop only) -->
+    <img src="sidebar.jpg" alt="KwikNotes sidebar in Chrome" class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-80 xl:w-96 rounded-l-2xl shadow-2xl" data-aos="fade-left" data-aos-delay="450" />
   </section>
-  <footer><a href="/privacy.html">Privacy</a> • <a href="mailto:help@kwik-notes.com">Support</a></footer>
+
+  <!-- VIDEO ------------------------------------------------------------ -->
+  <section id="video" class="bg-gray-50 py-20">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">See KwikNotes in Action</h2>
+      <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-xl" data-aos="zoom-in">
+        <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/zdYqMCC6iEE?si=yN3ozE7UqHMFmJpP" title="KwikNotes demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES --------------------------------------------------------- -->
+  <section id="features" class="py-20 relative overflow-x-hidden">
+    <!-- Pop‑out window overlay (floats into view as you scroll) -->
+    <img src="window.jpg" alt="KwikNotes pop‑out window" class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-10 md:-top-24 lg:-top-32 w-72 md:w-80 rotate-2 rounded-2xl shadow-2xl" data-aos="fade-down" data-aos-delay="200" />
+
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Why KwikNotes?</h2>
+
+      <div class="grid gap-12 md:grid-cols-2">
+        <!-- Card -->
+        <div class="space-y-3" data-aos="fade-up" data-aos-delay="50">
+          <h3 class="text-2xl font-semibold">ZERO‑FRICTION CAPTURE</h3>
+          <p>Jot a quick note in the add‑bar or fire off an email—your thoughts appear in seconds.</p>
+        </div>
+        <!-- Card -->
+        <div class="space-y-3" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-2xl font-semibold">EMAIL FROM ANYWHERE</h3>
+          <p>Open any mail app and send an email to your personal KwikNotes address (e.g. <code>alex@kwik-notes.com</code>). Specify a project in the subject—or leave it blank to file under <em>General</em>.</p>
+        </div>
+        <!-- Card -->
+        <div class="space-y-3" data-aos="fade-up" data-aos-delay="150">
+          <h3 class="text-2xl font-semibold">STAY ON TRACK</h3>
+          <p>Hit the ★ Favorite button to drop a note straight onto your Daily list. The floating Today panel follows you so top‑priority tasks never leave your sight.</p>
+        </div>
+        <!-- Card -->
+        <div class="space-y-3" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-2xl font-semibold">PROJECT POWER</h3>
+          <p>Create, rename, merge, and drag notes between projects with buttery‑smooth drag‑and‑drop.</p>
+        </div>
+        <!-- Card -->
+        <div class="space-y-3" data-aos="fade-up" data-aos-delay="250">
+          <h3 class="text-2xl font-semibold">IDEATION PAD</h3>
+          <p>A roomy legal‑pad editor with numbered and checkbox lists—perfect for brainstorming in the sidebar or in the pop‑out window.</p>
+        </div>
+        <!-- Card -->
+        <div class="space-y-3" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-2xl font-semibold">WORKS ANYWHERE</h3>
+          <p>Encrypted local cache means offline access; everything syncs automatically the moment you’re back online.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GETTING STARTED -------------------------------------------------- -->
+  <section id="getting-started" class="bg-gray-50 py-20">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Getting Started</h2>
+      <ol class="space-y-6 text-lg" data-aos="fade-up" data-aos-delay="100">
+        <li><strong>Install</strong> KwikNotes from the Chrome Web Store.</li>
+        <li><strong>Pin it:</strong> click the puzzle‑piece (Extensions) icon, then tap the pin 📌 next to KwikNotes so it’s always on your toolbar.</li>
+        <li><strong>Create your account:</strong> click the KwikNotes icon, select <em>Create Account</em>, and enter your email & password—your unique note‑capture address appears instantly.</li>
+        <li><strong>Send your first email:</strong>
+          <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+            <li><em>Project:</em> <code>Trip Planning</code> – creates (or tags) the “Trip Planning” project.</li>
+            <li><em>(no subject)</em> – lands in <em>Today</em>.</li>
+            <li>Write your note in the body and hit send. Open KwikNotes to see it already filed.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 text-center text-sm text-gray-500">
+    &copy; <span id="year"></span> KwikNotes — Built for thinkers on the move.
+  </footer>
+
+  <!-- Scripts ---------------------------------------------------------- -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 600,
+      easing: 'ease-out-quart',
+    });
+    // current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
