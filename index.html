@@ -6,7 +6,7 @@
   <title>KwikNotes — capture ideas at the speed of thought</title>
   <!-- Tailwind CSS (via CDN for quick prototyping) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- AOS for scroll‑triggered animations -->
+  <!-- AOS for scroll-triggered animations -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <style>
     /* Custom gradient for hero banner */
@@ -18,17 +18,23 @@
 
 <body class="scroll-smooth antialiased text-gray-700">
   <!-- HERO ------------------------------------------------------------ -->
-  <section class="hero-gradient relative min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 sm:py-24">
+  <section class="hero-gradient relative min-h-screen flex flex-col justify-center items-center text-center px-4 py-16 sm:py-24 overflow-hidden">
     <h1 class="text-white font-extrabold text-5xl sm:text-6xl md:text-7xl drop-shadow-lg mb-6" data-aos="fade-down">KwikNotes</h1>
     <p class="max-w-xl text-lg sm:text-xl md:text-2xl text-white mb-10" data-aos="fade" data-aos-delay="150">
-      Capture ideas at the speed of thought. Email yourself a note, pin tasks to Today, and work offline — all inside Chrome.
+      Capture ideas at the speed of thought. Email yourself a note, pin tasks to Today, and work offline — all inside Chrome.
     </p>
     <a href="#getting-started" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3 rounded-full shadow-lg hover:shadow-2xl transition" data-aos="zoom-in" data-aos-delay="300">
       Install on Chrome →
     </a>
 
+    <!-- Pop-out window screenshot directly under the install button -->
+    <img src="window.jpg" alt="KwikNotes pop-out window" class="mt-12 w-72 md:w-80 lg:w-96 rounded-2xl shadow-2xl z-10 pointer-events-none" style="transform: translate(-90%, 20%);" data-aos="fade-up" data-aos-delay="400" />
+
     <!-- Sidebar screenshot overlay (desktop only) -->
-    <img src="sidebar.jpg" alt="KwikNotes sidebar in Chrome" class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-80 xl:w-96 rounded-l-2xl shadow-2xl" data-aos="fade-left" data-aos-delay="450" />
+    <img src="sidebar.jpg" alt="KwikNotes sidebar in Chrome" class="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-80 xl:w-96 rounded-l-2xl shadow-2xl z-20 pointer-events-none" data-aos="fade-left" data-aos-delay="450" />
+
+    <!-- Mascot / cartoon icon -->
+    <img src="kwiknote_icon.png" alt="KwikNotes mascot" class="hidden sm:block absolute top-8 left-4 w-40 sm:w-48 md:w-56 lg:w-64 xl:w-72 drop-shadow-xl z-30 pointer-events-none" data-aos="fade-right" data-aos-delay="500" />
   </section>
 
   <!-- VIDEO ------------------------------------------------------------ -->
@@ -43,17 +49,14 @@
 
   <!-- FEATURES --------------------------------------------------------- -->
   <section id="features" class="py-20 relative overflow-x-hidden">
-    <!-- Pop‑out window overlay (floats into view as you scroll) -->
-    <img src="window.jpg" alt="KwikNotes pop‑out window" class="hidden md:block absolute left-1/2 -translate-x-1/2 -top-10 md:-top-24 lg:-top-32 w-72 md:w-80 rotate-2 rounded-2xl shadow-2xl" data-aos="fade-down" data-aos-delay="200" />
-
     <div class="container mx-auto px-4 max-w-6xl">
       <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Why KwikNotes?</h2>
 
       <div class="grid gap-12 md:grid-cols-2">
         <!-- Card -->
         <div class="space-y-3" data-aos="fade-up" data-aos-delay="50">
-          <h3 class="text-2xl font-semibold">ZERO‑FRICTION CAPTURE</h3>
-          <p>Jot a quick note in the add‑bar or fire off an email—your thoughts appear in seconds.</p>
+          <h3 class="text-2xl font-semibold">ZERO-FRICTION CAPTURE</h3>
+          <p>Jot a quick note in the add-bar or fire off an email—your thoughts appear in seconds.</p>
         </div>
         <!-- Card -->
         <div class="space-y-3" data-aos="fade-up" data-aos-delay="100">
@@ -63,17 +66,17 @@
         <!-- Card -->
         <div class="space-y-3" data-aos="fade-up" data-aos-delay="150">
           <h3 class="text-2xl font-semibold">STAY ON TRACK</h3>
-          <p>Hit the ★ Favorite button to drop a note straight onto your Daily list. The floating Today panel follows you so top‑priority tasks never leave your sight.</p>
+          <p>Hit the ★ Favorite button to drop a note straight onto your Daily list. The floating Today panel follows you so top-priority tasks never leave your sight.</p>
         </div>
         <!-- Card -->
         <div class="space-y-3" data-aos="fade-up" data-aos-delay="200">
           <h3 class="text-2xl font-semibold">PROJECT POWER</h3>
-          <p>Create, rename, merge, and drag notes between projects with buttery‑smooth drag‑and‑drop.</p>
+          <p>Create, rename, merge, and drag notes between projects with buttery-smooth drag-and-drop.</p>
         </div>
         <!-- Card -->
         <div class="space-y-3" data-aos="fade-up" data-aos-delay="250">
           <h3 class="text-2xl font-semibold">IDEATION PAD</h3>
-          <p>A roomy legal‑pad editor with numbered and checkbox lists—perfect for brainstorming in the sidebar or in the pop‑out window.</p>
+          <p>A roomy legal-pad editor with numbered and checkbox lists—perfect for brainstorming in the sidebar or in the pop-out window.</p>
         </div>
         <!-- Card -->
         <div class="space-y-3" data-aos="fade-up" data-aos-delay="300">
@@ -89,12 +92,12 @@
     <div class="container mx-auto px-4 max-w-4xl">
       <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Getting Started</h2>
       <ol class="space-y-6 text-lg" data-aos="fade-up" data-aos-delay="100">
-        <li><strong>Install</strong> KwikNotes from the Chrome Web Store.</li>
-        <li><strong>Pin it:</strong> click the puzzle‑piece (Extensions) icon, then tap the pin 📌 next to KwikNotes so it’s always on your toolbar.</li>
-        <li><strong>Create your account:</strong> click the KwikNotes icon, select <em>Create Account</em>, and enter your email & password—your unique note‑capture address appears instantly.</li>
+        <li><strong>Install</strong> KwikNotes from the Chrome Web Store.</li>
+        <li><strong>Pin it:</strong> click the puzzle-piece (Extensions) icon, then tap the pin 📌 next to KwikNotes so it’s always on your toolbar.</li>
+        <li><strong>Create your account:</strong> click the KwikNotes icon, select <em>Create Account</em>, and enter your email & password—your unique note-capture address appears instantly.</li>
         <li><strong>Send your first email:</strong>
           <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
-            <li><em>Project:</em> <code>Trip Planning</code> – creates (or tags) the “Trip Planning” project.</li>
+            <li><em>Project:</em> <code>Trip Planning</code> – creates (or tags) the “Trip Planning” project.</li>
             <li><em>(no subject)</em> – lands in <em>Today</em>.</li>
             <li>Write your note in the body and hit send. Open KwikNotes to see it already filed.</li>
           </ul>
@@ -105,7 +108,7 @@
 
   <!-- Footer -->
   <footer class="py-10 text-center text-sm text-gray-500">
-    &copy; <span id="year"></span> KwikNotes — Built for thinkers on the move.
+    &copy; <span id="year"></span> KwikNotes — Built for thinkers on the move.
   </footer>
 
   <!-- Scripts ---------------------------------------------------------- -->
